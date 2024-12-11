@@ -1,0 +1,14 @@
+2024-12-10 11:07:27,848:INFO:Connected to MongoDB.
+2024-12-10 11:07:28,610:INFO:Fetched 3 documents to send emails.
+2024-12-10 11:07:29,188:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2024-12-10 11:07:29,236:INFO:Document with jobId 1007 updated successfully.
+2024-12-10 11:07:29,236:INFO:Waiting for 5 minutes before sending the next email...
+2024-12-10 11:14:13,444:INFO:Connected to MongoDB.
+2024-12-10 11:14:14,011:INFO:Fetched 3 documents to send emails.
+2024-12-10 11:14:14,392:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2024-12-10 11:14:14,441:INFO:Document with jobId 1008 updated successfully.
+2024-12-10 11:14:14,662:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2024-12-10 11:14:14,706:INFO:Document with jobId 1009 updated successfully.
+2024-12-10 11:14:14,927:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2024-12-10 11:14:14,969:INFO:Document with jobId 1010 updated successfully.
+2024-12-10 11:14:15,006:INFO:MongoDB connection closed.
