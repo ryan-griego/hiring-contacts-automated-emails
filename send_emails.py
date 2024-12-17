@@ -53,7 +53,7 @@ HTML_TEMPLATE = """
   <meta name="x-apple-disable-message-reformatting">
   <!--[if !mso]><!-->
   <meta http-equiv="X-UA-Compatible" content="IE=edge"><!--<![endif]-->
-  <title>Creative Outreach Email</title>
+  <title>Outreach Email</title>
 
   <style type="text/css">
     body {
@@ -200,10 +200,10 @@ HTML_TEMPLATE = """
             <tr>
               <td align="center" style="background:#1a9ba2;padding:30px;">
                 <h1 class="heading-text" style="font-size:34px; line-height:1.4;">
-                  Your Name Here
+                  Ryan Griego
                 </h1>
                 <p style="font-size:14px;color:#ebf9f9;margin-top:10px;letter-spacing:0.5px;">
-                  Front-End Engineer | Creative Developer
+                  Software Developer
                 </p>
                 <div class="divider"></div>
               </td>
@@ -221,7 +221,7 @@ HTML_TEMPLATE = """
                   <tr>
                     <td align="center" style="border-top:1px solid #5ac1a9;padding:10px 0 0;">
                       <p style="color:#ffffff;font-size:14px;margin-top:10px;line-height:1.6;">
-                        Phone: (XXX) XXX-XXXX | Email: <a href="mailto:youremail@example.com" style="color:#ffffff;text-decoration:underline;">youremail@example.com</a>
+                        Phone: (949) 310-8534 | Email: <a href="mailto:ryangriego@gmail.com" style="color:#ffffff;text-decoration:underline;">ryangriego@gmail.com</a>
                       </p>
                     </td>
                   </tr>
@@ -237,7 +237,8 @@ HTML_TEMPLATE = """
             <tr>
               <td style="padding:30px 20px;font-family:'Open Sans',sans-serif;font-size:16px;line-height:1.6;color:#000;">
                 <p>Hello {{ContactNameOrTitle}},</p>
-                <p>Earlier this year, I applied for the <strong>{{JobTitle}}</strong> position at <strong>{{CompanyName}}</strong>. I hope you’ve been doing well. I’m reaching out to see if there may be any current or upcoming opportunities within <strong>{{CompanyName}}</strong> that align with my experience as a <strong>{{DesiredRole}}</strong>.</p>
+                <p>Last year, I applied for the <strong>{{JobTitle}}</strong> position at <strong>{{CompanyName}}</strong>. I’m reaching out to see if there may be any current or upcoming opportunities within <strong>{{CompanyName}}</strong> that align with my experience as a <strong>Software Developer</strong>.</p>
+                <br>
                 <p>I’ve admired the innovative projects at your company and I’d love the chance to contribute my skills and creativity. Below, you’ll find two of my recent side projects, both featuring short demos that highlight what I bring to the table.</p>
               </td>
             </tr>
@@ -286,7 +287,7 @@ HTML_TEMPLATE = """
                   <p style="color:#ffffff;font-size:14px;margin-top:10px;">Click above to watch a quick demo</p>
                 </div>
                 <p class="project-section-text">
-                  This e-commerce prototype features live product data, custom checkout flows, and responsive design—showcasing my versatility in front-end engineering.
+                  This e-commerce prototype features live product data, custom checkout flows, and responsive design..
                 </p>
               </td>
               <td style="background:#0f3159;padding:20px;vertical-align:middle;" width="40%">
@@ -294,7 +295,7 @@ HTML_TEMPLATE = """
                   Key Strengths
                 </h2>
                 <p style="color:#ffffff;font-size:14px;line-height:1.6;margin-top:10px;text-align:center;">
-                  Experienced in modern frameworks, I adapt quickly to new technologies and workflows, ensuring seamless user experiences and efficient development cycles.
+                  Experienced in modern frameworks, I adapt quickly to new technologies and workflows.
                 </p>
               </td>
             </tr>
@@ -343,6 +344,20 @@ HTML_TEMPLATE = """
                       <div class="skills-title">PHP</div>
                     </td>
                   </tr>
+                                    <tr>
+                    <td align="center" width="33.3%" style="padding:10px;">
+                      <img src="https://res.cloudinary.com/dm7y3yvjp/image/upload/v1734466160/node.js_iyy3w3.png" class="skills-icon" alt="Node.js"/>
+                      <div class="skills-title">Node.js</div>
+                    </td>
+                    <td align="center" width="33.3%" style="padding:10px;">
+                      <img src="https://res.cloudinary.com/dm7y3yvjp/image/upload/v1734466160/tailwind_pbl1nz.png" class="skills-icon" alt="Tailwind CSS"/>
+                      <div class="skills-title">Tailwind CSS</div>
+                    </td>
+                    <td align="center" width="33.3%" style="padding:10px;">
+                      <img src="https://res.cloudinary.com/dm7y3yvjp/image/upload/v1734466160/typescript_iuyq3e.png" class="skills-icon" alt="TypeScript"/>
+                      <div class="skills-title">TypeScript</div>
+                    </td>
+                  </tr>
                 </table>
               </td>
             </tr>
@@ -354,17 +369,17 @@ HTML_TEMPLATE = """
           <table width="100%" cellpadding="0" cellspacing="0">
             <tr>
               <td style="padding:30px 20px;font-family:'Open Sans',sans-serif;font-size:16px;line-height:1.6;color:#000;text-align:center;">
-                <p>If you’d like to discuss how I can support <strong>{{CompanyName}}</strong> further, feel free to:</p>
+                <p>If you’d like to discuss how I can bring value to <strong>{{CompanyName}}</strong>,<br> please feel free to:</p>
                 <a href="{{CalendlyURL}}" target="_blank" class="cta-button">Schedule a Call</a>
                 <p style="margin-top:20px;">
                   You can also reply directly to this email if that’s easier for you. I appreciate your time and consideration, and I look forward to the possibility of working together!
                 </p>
-                <p style="margin-top:20px;">Warm regards,<br><strong>Your Name</strong></p>
+                <p style="margin-top:20px;">Warm regards,<br>Ryan Griego</p>
               </td>
             </tr>
             <tr>
               <td style="background:#f0f0f5;padding:10px;text-align:center;color:#888888;font-size:12px;">
-                &copy; {{CurrentYear}} Your Name. All Rights Reserved.
+                &copy; {{CurrentYear}} Ryan Griego. All Rights Reserved.
               </td>
             </tr>
           </table>
@@ -430,7 +445,6 @@ def populate_template(document):
         "ContactNameOrTitle": document.get("jobPosterName", "Hiring Manager"),
         "JobTitle": document.get("jobTitle", "the position"),
         "CompanyName": document.get("companyName", "your company"),
-        "DesiredRole": document.get("desiredRole", "the role"),
         "YouTubeVideoURL_Project1": document.get("YouTubeVideoURL_Project1", "https://www.youtube.com/watch?v=your_video_id1"),  # Replace or fetch from document
         "YouTubeThumbnailURL_Project1": document.get("YouTubeThumbnailURL_Project1", "https://img.youtube.com/vi/your_video_id1/0.jpg"),  # Replace or fetch from document
         "YouTubeVideoURL_Project2": document.get("YouTubeVideoURL_Project2", "https://www.youtube.com/watch?v=your_video_id2"),  # Replace or fetch from document
