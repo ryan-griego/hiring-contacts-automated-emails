@@ -12,3 +12,62 @@
 2024-12-10 11:14:14,927:INFO:Email sent to ryangriego@gmail.com: Status Code 202
 2024-12-10 11:14:14,969:INFO:Document with jobId 1010 updated successfully.
 2024-12-10 11:14:15,006:INFO:MongoDB connection closed.
+2024-12-20 14:51:59,535:INFO:Connected to MongoDB.
+2024-12-20 14:52:02,784:INFO:Fetched 3 documents to send emails.
+2024-12-20 14:52:03,210:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2024-12-20 14:52:03,257:INFO:Document with jobId 1001 updated successfully.
+2024-12-20 14:52:03,462:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2024-12-20 14:52:03,508:INFO:Document with jobId 1002 updated successfully.
+2024-12-20 14:52:03,717:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2024-12-20 14:52:03,764:INFO:Document with jobId 1003 updated successfully.
+2024-12-20 14:52:03,800:INFO:MongoDB connection closed.
+2024-12-20 15:08:26,140:INFO:Connected to MongoDB.
+2024-12-20 15:08:26,910:INFO:Fetched 1 documents to send emails.
+2024-12-20 15:08:26,913:ERROR:Error sending email to j: 'email'
+2024-12-20 15:08:26,913:ERROR:Failed to send email to j. Document not updated.
+2024-12-20 15:08:27,197:INFO:MongoDB connection closed.
+2024-12-20 15:11:10,691:INFO:Connected to MongoDB.
+2024-12-20 15:11:11,553:INFO:Fetched 1 documents to send emails.
+2024-12-20 15:11:11,555:ERROR:Error sending email to j: 'email'
+2024-12-20 15:11:11,555:ERROR:Failed to send email to j. Document not updated.
+2024-12-20 15:11:11,590:INFO:MongoDB connection closed.
+2024-12-20 15:12:00,198:INFO:Connected to MongoDB.
+2024-12-20 15:12:00,632:INFO:Fetched 1 documents to send emails.
+2024-12-20 15:12:00,636:ERROR:Error sending email to r: 'email'
+2024-12-20 15:12:00,636:ERROR:Failed to send email to r. Document not updated.
+2024-12-20 15:12:00,674:INFO:MongoDB connection closed.
+2024-12-20 15:13:22,345:INFO:Connected to MongoDB.
+2024-12-20 15:13:22,820:INFO:Fetched 1 documents to send emails.
+2024-12-20 15:13:22,823:ERROR:Error sending email to r: 'email'
+2024-12-20 15:13:22,823:ERROR:Failed to send email to r. Document not updated.
+2024-12-20 15:13:22,858:INFO:MongoDB connection closed.
+2024-12-20 15:14:23,382:INFO:Connected to MongoDB.
+2024-12-20 15:14:23,932:INFO:Fetched 1 documents to send emails.
+2024-12-20 15:14:25,460:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2024-12-20 15:14:25,829:INFO:Document with jobId 2881636001.0 updated successfully.
+2024-12-20 15:14:25,865:INFO:MongoDB connection closed.
+2024-12-20 15:19:22,276:INFO:Connected to MongoDB.
+2024-12-20 15:19:22,751:INFO:Fetched 0 documents to send emails.
+2024-12-20 15:19:22,751:INFO:No documents found to send emails.
+2024-12-20 15:20:08,357:INFO:Connected to MongoDB.
+2024-12-20 15:20:09,854:INFO:Fetched 0 documents to send emails.
+2024-12-20 15:20:09,854:INFO:No documents found to send emails.
+2024-12-20 15:23:16,519:INFO:Connected to MongoDB.
+2024-12-20 15:23:17,980:INFO:Fetched 1 documents to send emails.
+2024-12-20 15:23:18,675:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2024-12-20 15:23:18,723:INFO:Document with jobId 2881636001.0 updated successfully.
+2024-12-20 15:23:18,762:INFO:MongoDB connection closed.
+2024-12-21 12:09:04,128:INFO:Connected to MongoDB.
+2024-12-21 12:09:04,664:INFO:Fetched 1 documents to send emails.
+2024-12-21 12:09:04,664:ERROR:Failed to load HTML template: [Errno 2] No such file or directory: '/Users/ryangriego/Desktop/projects/hiring-contacts-automated-emails/email_templates/email_a_long.html'
+2024-12-21 12:10:09,429:INFO:Connected to MongoDB.
+2024-12-21 12:10:09,887:INFO:Fetched 1 documents to send emails.
+2024-12-21 12:10:09,887:ERROR:Failed to load HTML template: [Errno 2] No such file or directory: '/Users/ryangriego/Desktop/projects/hiring-contacts-automated-emails/email_templates/email_a_long.html'
+2024-12-21 12:11:05,421:INFO:Connected to MongoDB.
+2024-12-21 12:11:06,006:INFO:Fetched 1 documents to send emails.
+2024-12-21 12:11:06,006:ERROR:Failed to load HTML template: [Errno 2] No such file or directory: '/Users/ryangriego/Desktop/projects/hiring-contacts-automated-emails/email_templates/email_a_long.html'
+2024-12-21 12:11:38,362:INFO:Connected to MongoDB.
+2024-12-21 12:11:38,801:INFO:Fetched 1 documents to send emails.
+2024-12-21 12:11:39,246:INFO:Email sent to ['ryangriego@gmail.com']: Status Code 202
+2024-12-21 12:11:39,294:INFO:Document with jobId 2881636001.0 updated successfully.
+2024-12-21 12:11:39,330:INFO:MongoDB connection closed.
