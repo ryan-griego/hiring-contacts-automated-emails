@@ -219,7 +219,9 @@ def get_recent_documents(client, limit=3):
     """
     db = client[DATABASE_NAME]
     collection = db[COLLECTION_NAME]
-    query = {"jobType": "test2", "sentFollowUp1": False}
+    #query = {"jobType": "test2", "sentFollowUp1": False}
+    #TEST ONE EMAIL
+    query = {"sentFollowUp1": False}
     documents = list(collection.find(query).limit(limit))
     logging.info(f"Fetched {len(documents)} documents to send emails.")
     return documents
@@ -267,10 +269,10 @@ def populate_template(document):
         "ContactNameOrTitle": document.get("jobPosterName", "Hiring Manager"),
         "JobTitle": document.get("jobTitle", "the position"),
         "CompanyName": document.get("companyName", "your company"),
-        "YouTubeVideoURL_Project1": document.get("YouTubeVideoURL_Project1", "https://www.youtube.com/watch?v=your_video_id1"),
-        "YouTubeThumbnailURL_Project1": document.get("YouTubeThumbnailURL_Project1", "https://img.youtube.com/vi/your_video_id1/0.jpg"),
-        "YouTubeVideoURL_Project2": document.get("YouTubeVideoURL_Project2", "https://www.youtube.com/watch?v=your_video_id2"),
-        "YouTubeThumbnailURL_Project2": document.get("YouTubeThumbnailURL_Project2", "https://img.youtube.com/vi/your_video_id2/0.jpg"),
+        "YouTubeVideoURL_Project1": document.get("YouTubeVideoURL_Project1", "https://patient-appointment-booking.ryangriego.com/"),
+        "YouTubeThumbnailURL_Project1": document.get("YouTubeThumbnailURL_Project1", "https://res.cloudinary.com/dm7y3yvjp/image/upload/v1736276434/patient-healthcare-booking-app_tbka9n.png"),
+        "YouTubeVideoURL_Project2": document.get("YouTubeVideoURL_Project2", "https://chatrrg.ryangriego.com/"),
+        "YouTubeThumbnailURL_Project2": document.get("YouTubeThumbnailURL_Project2", "https://res.cloudinary.com/dm7y3yvjp/image/upload/v1736277206/chatrrg-app_fbs5gm.png"),
         "PortfolioURL": PORTFOLIO_URL,
         "LinkedInURL": LINKEDIN_URL,
         "GitHubURL": GITHUB_URL,
@@ -298,7 +300,9 @@ def main():
         sys.exit(1)
 
     # Fetch recent documents
-    documents = get_recent_documents(client, limit=3)
+    #documents = get_recent_documents(client, limit=3)
+    #TEST TO SEND 1 EMAIL
+    documents = get_recent_documents(client, limit=1)
     if not documents:
         logging.info("No documents found to send emails.")
         client.close()
@@ -314,7 +318,8 @@ def main():
             continue
 
         # Add your email to the list of recipients
-        to_emails = [hiring_contact_email, 'ryangriego@gmail.com']
+        #to_emails = [hiring_contact_email, 'ryangriego@gmail.com']
+        to_emails = ['ryangriego@gmail.com']
         logging.info(f"Sending email to: {to_emails}")
 
         # Populate HTML template
@@ -327,8 +332,10 @@ def main():
         success = send_email(sendgrid_client, FROM_EMAIL, to_emails, subject, html_content)
         if success:
             # Update MongoDB document
+            print('SENT EMAIL')
             update_document_sent(client, doc.get("jobId"))
         else:
+            print('did not sent email')
             logging.error(f"Failed to send email to {to_emails}. Document not updated.")
 
     # Close MongoDB connection
