@@ -176,38 +176,7 @@
         <!-- Header / Hero Section -->
         <div style="margin:0 auto;max-width:600px;background:#ffffff;">
           <table width="100%" cellpadding="0" cellspacing="0">
-            <tr>
-              <td align="center" style="background:#1a9ba2;padding:22px;">
-                <h1 class="heading-text" style="font-size:34px; line-height:1.4;">
-                  Ryan Griego
-                </h1>
-                <p style="font-size:16px;color:#ebf9f9;margin-top:8px;letter-spacing:0.5px;">
-                  Software Developer
-                </p>
-                <div class="divider"></div>
-              </td>
-            </tr>
-            <tr>
-              <td style="padding:20px;text-align:center;background:#0f3159;">
-                <div class="contact-links" style="margin-bottom:10px;">
-                  <a href="{{PortfolioURL}}" target="_blank">Portfolio</a>
-                  <span class="hide-mobile" style="color:#ffffff;">|</span>
-                  <a href="{{LinkedInURL}}" target="_blank">LinkedIn</a>
-                  <span class="hide-mobile" style="color:#ffffff;">|</span>
-                  <a href="{{GitHubURL}}" target="_blank">GitHub</a>
-                </div>
-                <table align="center" cellpadding="0" cellspacing="0">
-                  <tr>
-                    <td align="center" style="border-top:1px solid #5ac1a9;padding:10px 0 0;">
-                      <p style="color:#ffffff;font-size:14px;margin-top:10px;line-height:1.6;">
-                        Phone: (949) 310-8534 | Email: <a href="mailto:ryangriego@gmail.com"
-                          style="color:#ffffff;text-decoration:underline;">ryangriego@gmail.com</a>
-                      </p>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
+
           </table>
         </div>
 
@@ -217,14 +186,27 @@
             <tr>
               <td
                 style="padding:30px 20px;font-family:'Open Sans',sans-serif;font-size:16px;line-height:1.6;color:#000;">
-                <p>Hello {{ContactNameOrTitle}},</p>
-                <p>Last year, I applied for the {{JobTitle}} position at {{CompanyName}}. I’m reaching out to see if
-                  there may be any current or upcoming opportunities within {{CompanyName}} that align with my
-                  experience as a Software Developer.</p>
+                <p>Hi {{ContactNameOrTitle}},</p>
+                <p>My name is Ryan Griego, and last year I applied for the {{JobTitle}} position at {{CompanyName}}. I'd
+                  love to explore ways to contribute.</p>
                 <br>
-                <p>I’ve admired the innovative projects at your company and I’d love the chance to contribute my skills
-                  and creativity. Below, you’ll find two of my recent side projects, both featuring short demos that
-                  highlight what I bring to the table.</p>
+                <p>Are there any current or upcoming opportunities where I can add value to your team? Feel
+                  free to:<br>
+
+                <div style="text-align: center;">
+                  <a href="{{CalendlyURL}}" target="_blank" class="cta-button" style="color:#ffffff;">Schedule a
+                    Call</a>
+                </div><br>
+                Or reply directly to this email.
+
+                I appreciate your time, and I look forward to the possibility of meeting you!<br><br>
+
+                Below, you’ll find two of my recent side projects that
+                highlight some of what I bring to the table.</p>
+                <br>
+                <p>Thank you,</p>
+                <p>Ryan</p>
+
               </td>
             </tr>
           </table>
@@ -238,9 +220,12 @@
                 <h2 class="project-header">Appointment Booking App</h2>
                 <div style="text-align:center;">
                   <a href="{{YouTubeVideoURL_Project1}}" target="_blank" style="text-decoration:none;">
-                    <img src="{{YouTubeThumbnailURL_Project1}}" alt="View Healthcare Appointment Booking App Live Site" class="project-img" width="200" height="126"/>
+                    <img src="{{YouTubeThumbnailURL_Project1}}" alt="View Healthcare Appointment Booking App Live Site"
+                      class="project-img" width="200" height="126" />
                   </a>
-                  <p style="color:#ffffff;font-size:14px;margin-top:10px;"><a href="https://patient-appointment-booking.ryangriego.com/" style="color:#ffffff;">View the live site</a></p>
+                  <p style="color:#ffffff;font-size:14px;margin-top:10px;"><a
+                      href="https://patient-appointment-booking.ryangriego.com/" style="color:#ffffff;">View the live
+                      site</a></p>
                 </div>
                 <p class="project-section-text">
                   Book appointments with physicians and receive SMS notifications.
@@ -252,7 +237,7 @@
                   Built With
                 </h2>
                 <p style="color:#ffffff;font-size:14px;line-height:1.6;margin-top:10px;text-align:center;">
-                  Next.js, TypeScript, Tailwind CSS, and deployed with Docker.
+                  Next.js, TypeScript, Tailwind CSS, Appwrite, and deployed with Docker.
                 </p>
               </td>
             </tr>
@@ -268,12 +253,14 @@
                 <h2 class="project-header">ChatRRG - Chat Bot</h2>
                 <div style="text-align:center;">
                   <a href="{{YouTubeVideoURL_Project2}}" target="_blank" style="text-decoration:none;">
-                    <img src="{{YouTubeThumbnailURL_Project2}}" alt="View ChatRRG Live Site" class="project-img"  width="200" height="126"/>
+                    <img src="{{YouTubeThumbnailURL_Project2}}" alt="View ChatRRG Live Site" class="project-img"
+                      width="200" height="126" />
                   </a>
-                  <p style="color:#ffffff;font-size:14px;margin-top:10px;"><a href="https://chatrrg.ryangriego.com/" style="color:#ffffff;">View the live site</a></p>
+                  <p style="color:#ffffff;font-size:14px;margin-top:10px;"><a href="https://chatrrg.ryangriego.com/"
+                      style="color:#ffffff;">View the live site</a></p>
                 </div>
                 <p class="project-section-text">
-                  Allows users to interact with OpenAI's ChatGPT directly with OpenAI API models.
+                  Allows users to interact with OpenAI's LLM models.
                 </p>
               </td>
               <td style="background:#0f3159;padding:20px;vertical-align:middle;" width="40%">
@@ -322,8 +309,8 @@
                       <div class="skills-title">Vue</div>
                     </td>
                     <td align="center" width="25%" style="padding:10px;">
-                      <img src="https://res.cloudinary.com/dm7y3yvjp/image/upload/v1712253652/nuxt-js-icon_wxwrc2.png" class="skills-icon"
-                        alt="Nuxt.js" />
+                      <img src="https://res.cloudinary.com/dm7y3yvjp/image/upload/v1712253652/nuxt-js-icon_wxwrc2.png"
+                        class="skills-icon" alt="Nuxt.js" />
                       <div class="skills-title">Nuxt.js</div>
                     </td>
                   </tr>
@@ -341,36 +328,36 @@
                       <div class="skills-title">PHP</div>
                     </td>
                     <td align="center" width="25%" style="padding:10px;">
-                      <img src="https://res.cloudinary.com/dm7y3yvjp/image/upload/v1734466160/node.js_iyy3w3.png" class="skills-icon"
-                        alt="Node.js" />
+                      <img src="https://res.cloudinary.com/dm7y3yvjp/image/upload/v1734466160/node.js_iyy3w3.png"
+                        class="skills-icon" alt="Node.js" />
                       <div class="skills-title">Node.js</div>
                     </td>
                     <td align="center" width="25%" style="padding:10px;">
-                      <img src="https://res.cloudinary.com/dm7y3yvjp/image/upload/v1734466160/tailwind_pbl1nz.png" class="skills-icon"
-                        alt="Tailwind CSS" />
+                      <img src="https://res.cloudinary.com/dm7y3yvjp/image/upload/v1734466160/tailwind_pbl1nz.png"
+                        class="skills-icon" alt="Tailwind CSS" />
                       <div class="skills-title">Tailwind CSS</div>
                     </td>
                   </tr>
                   <tr>
                     <td align="center" width="25%" style="padding:10px;">
-                      <img src="https://res.cloudinary.com/dm7y3yvjp/image/upload/v1734466160/typescript_iuyq3e.png"
-                        class="skills-icon" alt="TypeScript" />
-                      <div class="skills-title">TypeScript</div>
+                      <img src="https://res.cloudinary.com/dm7y3yvjp/image/upload/v1736801315/python_fd1r51.png"
+                        class="skills-icon" alt="Python" />
+                      <div class="skills-title">Python</div>
                     </td>
                     <td align="center" width="25%" style="padding:10px;">
-                      <img src="https://res.cloudinary.com/dm7y3yvjp/image/upload/v1734466160/typescript_iuyq3e.png" class="skills-icon"
-                        alt="TypeScript" />
-                      <div class="skills-title">TypeScript</div>
+                      <img src="https://res.cloudinary.com/dm7y3yvjp/image/upload/v1736801316/mongodb_rsniyq.png"
+                        class="skills-icon" alt="MongoDB" />
+                      <div class="skills-title">MongoDB</div>
                     </td>
                     <td align="center" width="25%" style="padding:10px;">
-                      <img src="https://res.cloudinary.com/dm7y3yvjp/image/upload/v1734466160/typescript_iuyq3e.png" class="skills-icon"
-                        alt="TypeScript" />
-                      <div class="skills-title">TypeScript</div>
+                      <img src="https://res.cloudinary.com/dm7y3yvjp/image/upload/v1736801315/postgresql_iptm0n.png"
+                        class="skills-icon" alt="PostgreSQL" />
+                      <div class="skills-title">PostgreSQL</div>
                     </td>
                     <td align="center" width="25%" style="padding:10px;">
-                      <img src="https://res.cloudinary.com/dm7y3yvjp/image/upload/v1734466160/typescript_iuyq3e.png" class="skills-icon"
-                        alt="TypeScript" />
-                      <div class="skills-title">TypeScript</div>
+                      <img src="https://res.cloudinary.com/dm7y3yvjp/image/upload/v1736801315/aws_cksepe.png"
+                        class="skills-icon" alt="AWS" />
+                      <div class="skills-title">AWS</div>
                     </td>
                   </tr>
                 </table>
@@ -382,21 +369,31 @@
         <!-- CTA Section -->
         <div style="margin:20px auto;max-width:600px;background:#ffffff;border-radius:6px;overflow:hidden;">
           <table width="100%" cellpadding="0" cellspacing="0">
+
             <tr>
-              <td
-                style="padding:30px 20px;font-family:'Open Sans',sans-serif;font-size:16px;line-height:1.6;color:#000;text-align:center;">
-                <p>If you’d like to discuss how I can bring value to {{CompanyName}},<br> please feel free to</p>
-                <a href="{{CalendlyURL}}" target="_blank" class="cta-button" style="color:#ffffff;">Schedule a Call</a>
-                <p style="margin-top:20px;">
-                  You can also reply directly to this email if that’s easier for you. I appreciate your time and
-                  consideration, and I look forward to the possibility of working together!
-                </p>
-                <p style="margin-top:20px;">Warm regards,<br>Ryan Griego</p>
+              <td style="padding:20px;text-align:center;background:#0f3159;">
+                <div class="contact-links" style="margin-bottom:10px;">
+                  <a href="{{PortfolioURL}}" target="_blank">Portfolio</a>
+                  <span class="hide-mobile" style="color:#ffffff;">|</span>
+                  <a href="{{LinkedInURL}}" target="_blank">LinkedIn</a>
+                  <span class="hide-mobile" style="color:#ffffff;">|</span>
+                  <a href="{{GitHubURL}}" target="_blank">GitHub</a>
+                </div>
+                <table align="center" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td align="center" style="border-top:1px solid #5ac1a9;padding:10px 0 0;">
+                      <p style="color:#ffffff;font-size:14px;margin-top:10px;line-height:1.6;">
+                        Phone: (949) 310-8534 | Email: <a href="mailto:ryangriego@gmail.com"
+                          style="color:#ffffff;text-decoration:underline;">ryangriego@gmail.com</a>
+                      </p>
+                    </td>
+                  </tr>
+                </table>
               </td>
             </tr>
             <tr>
               <td style="background:#f0f0f5;padding:10px;text-align:center;color:#888888;font-size:12px;">
-                &copy; {{CurrentYear}} Ryan Griego. All Rights Reserved.
+                &copy; {{CurrentYear}} Ryan Griego.
               </td>
             </tr>
           </table>

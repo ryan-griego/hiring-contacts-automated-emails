@@ -1,4 +1,5 @@
 # Ignore environment variables
+.DS_Store
 .env
 
 # Ignore Python bytecode
