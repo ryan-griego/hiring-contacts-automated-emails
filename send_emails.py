@@ -54,8 +54,10 @@ def get_recent_documents(client, limit=3):
 
     # Define the query
     query = {
-        "jobType": "test2",
-        "sentFollowUp1": False
+        "sentFollowUp1": False,
+        "status": "Sent",
+        "jobPosterName": {"$exists": True, "$ne": None},
+        "jobPosterEmail": {"$exists": True, "$ne": None}
     }
 
     # Fetch and sort documents by jobId in ascending order
