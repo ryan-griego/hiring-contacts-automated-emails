@@ -46,43 +46,37 @@ def load_html_template(template_name):
 
 def get_recent_documents(client, limit=3):
     """
-    Fetches recent documents with jobType 'test2', sentFollowUp1 as False,
-    and ensures timestamp is at least 3 months old.
+    Fetches recent documents with jobType 'test2' and sentFollowUp1 as False.
+    Processes documents starting from the lowest jobId.
     """
     db = client[DATABASE_NAME]
     collection = db[COLLECTION_NAME]
 
-    # Calculate the threshold date (3 months ago) in UTC
-    three_months_ago = datetime.now(pytz.utc) - timedelta(days=90)
-    print(f"Three months ago (UTC): {three_months_ago}")
+    # Define the query
+    query = {
+        "jobType": "test2",
+        "sentFollowUp1": False
+    }
 
-    # Fetch documents with jobType 'test2' and sentFollowUp1 as False
-    raw_documents = list(
-        collection.find({"jobType": "test2", "sentFollowUp1": False}).limit(limit)
-    )
+    # Fetch and sort documents by jobId in ascending order
+    documents = list(collection.find(query).sort("jobId", 1).limit(limit))
 
-    # Filter documents by parsed timestamp
+    # Filter by timestamp
+    three_months_ago = datetime.now(pytz.UTC) - timedelta(days=90)
     valid_documents = []
-    for doc in raw_documents:
-        if "timestamp" in doc:
+
+    for doc in documents:
+        timestamp = doc.get("timestamp")
+        if timestamp:
             try:
-                # Parse the timestamp string to a datetime object
-                doc_timestamp = datetime.fromisoformat(doc["timestamp"].replace("Z", "+00:00"))
-                # Check if the timestamp is at least 3 months old
-                if doc_timestamp < three_months_ago:
+                doc_timestamp = datetime.fromisoformat(timestamp.replace("Z", "+00:00"))
+                if doc_timestamp <= three_months_ago:
                     valid_documents.append(doc)
             except ValueError:
                 print(f"Invalid timestamp format for document: {doc}")
 
-    logging.info(f"Fetched {len(valid_documents)} documents to send emails.")
-    print(f"Query Results: {valid_documents}")  # Debugging output
+    logging.info(f"Filtered {len(valid_documents)} documents to process.")
     return valid_documents
-
-    # Fetch the documents
-    documents = list(collection.find(query).limit(limit))
-    logging.info(f"Fetched {len(documents)} documents to send emails.")
-    print(f"Query Results: {documents}")  # Debugging output
-    return documents
 
 def send_email(sendgrid_client, from_email, to_email, subject, html_content):
     """
@@ -190,6 +184,8 @@ def main():
             success = send_email(sendgrid_client, FROM_EMAIL, recipient, subject, html_content)
             if success:
                 print(f"SENT EMAIL to {recipient}")
+                timestamp = datetime.fromisoformat(doc["timestamp"].replace("Z", "+00:00"))
+                print(f"Human-readable timestamp: {timestamp}")
             else:
                 print(f"FAILED to send email to {recipient}")
                 logging.error(f"Failed to send email to {recipient}. Document not updated.")
@@ -209,8 +205,6 @@ def main():
     # Close MongoDB connection
     client.close()
     logging.info("MongoDB connection closed.")
-
-
 
 if __name__ == "__main__":
     main()

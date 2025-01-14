@@ -181,3 +181,70 @@
 2025-01-13 13:58:00,294:INFO:Email sent to ryangriego@gmail.com: Status Code 202
 2025-01-13 13:58:00,334:INFO:Document with jobId 1003 updated successfully.
 2025-01-13 13:58:00,369:INFO:MongoDB connection closed.
+2025-01-13 15:19:37,756:INFO:Connected to MongoDB.
+2025-01-13 15:19:38,299:INFO:Fetched 3 documents to send emails.
+2025-01-13 15:19:38,300:INFO:Sending email to: ['jsmith@1871.com', 'ryangriego@gmail.com']
+2025-01-13 15:19:38,760:INFO:Email sent to jsmith@1871.com: Status Code 202
+2025-01-13 15:19:38,960:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2025-01-13 15:19:39,161:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2025-01-13 15:19:39,209:INFO:Document with jobId 3991444678.0 updated successfully.
+2025-01-13 15:19:39,209:INFO:Sending email to: ['ryangriego@gmail.com']
+2025-01-13 15:19:39,412:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2025-01-13 15:19:39,824:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2025-01-13 15:19:39,879:INFO:Document with jobId 1008 updated successfully.
+2025-01-13 15:19:39,879:INFO:Sending email to: ['ryangriego@gmail.com']
+2025-01-13 15:19:40,101:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2025-01-13 15:19:40,306:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2025-01-13 15:19:40,352:INFO:Document with jobId 1010 updated successfully.
+2025-01-13 15:19:40,388:INFO:MongoDB connection closed.
+2025-01-13 15:49:25,790:INFO:Connected to MongoDB.
+2025-01-13 15:49:26,354:INFO:Fetched 0 documents to process.
+2025-01-13 15:49:26,354:INFO:No documents found to send emails.
+2025-01-13 15:49:49,441:INFO:Connected to MongoDB.
+2025-01-13 15:49:50,038:INFO:Fetched 0 documents to process.
+2025-01-13 15:49:50,038:INFO:No documents found to send emails.
+2025-01-13 15:50:13,524:INFO:Connected to MongoDB.
+2025-01-13 15:50:14,068:INFO:Fetched 3 documents to process.
+2025-01-13 15:50:14,068:INFO:Sending email to: ['ryangriego@gmail.com']
+2025-01-13 15:50:14,623:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2025-01-13 15:50:15,822:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2025-01-13 15:50:15,868:INFO:Document with jobId 1001 updated successfully.
+2025-01-13 15:50:15,868:INFO:Sending email to: ['ryangriego@gmail.com']
+2025-01-13 15:50:16,309:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2025-01-13 15:50:16,515:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2025-01-13 15:50:16,565:INFO:Document with jobId 1002 updated successfully.
+2025-01-13 15:50:16,565:INFO:Sending email to: ['ryangriego@gmail.com']
+2025-01-13 15:50:16,751:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2025-01-13 15:50:16,955:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2025-01-13 15:50:16,996:INFO:Document with jobId 1003 updated successfully.
+2025-01-13 15:50:17,029:INFO:MongoDB connection closed.
+2025-01-13 15:53:12,421:INFO:Connected to MongoDB.
+2025-01-13 15:53:12,895:INFO:Fetched 0 documents to process.
+2025-01-13 15:53:12,895:INFO:No documents found to send emails.
+2025-01-13 15:57:58,841:INFO:Connected to MongoDB.
+2025-01-13 15:57:59,334:INFO:Filtered 3 documents to process.
+2025-01-13 15:57:59,334:INFO:Sending email to: ['ryangriego@gmail.com']
+2025-01-13 15:57:59,620:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2025-01-13 15:57:59,666:INFO:Document with jobId 1004 updated successfully.
+2025-01-13 15:57:59,666:INFO:Sending email to: ['ryangriego@gmail.com']
+2025-01-13 15:57:59,854:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2025-01-13 15:57:59,893:INFO:Document with jobId 1005 updated successfully.
+2025-01-13 15:57:59,893:INFO:Sending email to: ['ryangriego@gmail.com']
+2025-01-13 15:58:00,085:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2025-01-13 15:58:00,126:INFO:Document with jobId 1006 updated successfully.
+2025-01-13 15:58:00,159:INFO:MongoDB connection closed.
+2025-01-13 15:59:54,113:INFO:Connected to MongoDB.
+2025-01-13 15:59:55,054:INFO:Filtered 3 documents to process.
+2025-01-13 15:59:55,054:INFO:Sending email to: ['ryangriego@gmail.com']
+2025-01-13 15:59:55,496:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2025-01-13 15:59:55,692:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2025-01-13 15:59:55,734:INFO:Document with jobId 1007 updated successfully.
+2025-01-13 15:59:55,734:INFO:Sending email to: ['ryangriego@gmail.com']
+2025-01-13 15:59:55,932:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2025-01-13 15:59:56,114:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2025-01-13 15:59:56,159:INFO:Document with jobId 1009 updated successfully.
+2025-01-13 15:59:56,159:INFO:Sending email to: ['ryangriego@gmail.com']
+2025-01-13 15:59:56,337:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2025-01-13 15:59:56,515:INFO:Email sent to ryangriego@gmail.com: Status Code 202
+2025-01-13 15:59:56,557:INFO:Document with jobId 1011 updated successfully.
+2025-01-13 15:59:56,591:INFO:MongoDB connection closed.
