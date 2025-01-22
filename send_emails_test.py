@@ -136,11 +136,15 @@ def update_document_sent(client, job_id):
     """
     db = client[DATABASE_NAME]
     collection = db[COLLECTION_NAME]
+
+    # Comment this code out to prevent updating during test
     result = collection.update_one({"jobId": job_id}, {"$set": {"sentFollowUp1": True}})
     if result.modified_count > 0:
         logging.info(f"Document with jobId {job_id} updated successfully.")
     else:
         logging.warning(f"No document found with jobId {job_id} to update.")
+
+
 
 def populate_template(document):
     """
@@ -148,9 +152,15 @@ def populate_template(document):
     """
     html_template = load_html_template("email_a_long.html")
     template = Template(html_template)
+    # Ensure jobPosterName is a string and use only the first name
+    job_poster_name = document.get("jobPosterName", "Hiring Manager")
+    if isinstance(job_poster_name, list):
+        job_poster_name = job_poster_name[0]  # Take the first name from the list
+    if isinstance(job_poster_name, str):
+        job_poster_name = job_poster_name.split()[0]  # Use only the first word (first name)
     # Prepare data for template
     data = {
-        "ContactNameOrTitle": document.get("jobPosterName", "Hiring Manager"),
+        "ContactNameOrTitle": job_poster_name,
         "JobTitle": document.get("jobTitle", "the position"),
         "CompanyName": document.get("companyName", "your company"),
         "outcome": document.get("outcome", "achieve its goals"),
@@ -194,6 +204,8 @@ def main():
     for doc in documents:
         # Retrieve the hiring contact's email from the document
         hiring_contact_email = doc.get("jobPosterEmail")
+        # For testing purposes, set a default email
+        #hiring_contact_email = 'ryangriego@gmail.com'
 
         # Check if the hiring contact's email exists
         if not hiring_contact_email:
