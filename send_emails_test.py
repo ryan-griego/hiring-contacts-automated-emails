@@ -47,10 +47,49 @@ def load_html_template(template_name):
         logging.error(f"Failed to load HTML template: {e}")
         sys.exit(1)
 
+# def get_recent_documents(client, limit=4):
+#     """
+#     Fetches recent documents with jobType 'test2' and sentFollowUp1 as False.
+#     Processes documents starting from the lowest jobId.
+#     """
+#     db = client[DATABASE_NAME]
+#     collection = db[COLLECTION_NAME]
+
+
+#     query = {
+#         "sentFollowUp1": False,
+#         "status": "Sent",
+#         "jobPosterName": {"$exists": True, "$ne": None},
+#         "jobPosterEmail": {"$exists": True, "$ne": None},
+#         #"outcome": {"$exists": True, "$ne": "", "$ne": None}
+#     }
+
+#     logging.info(f"Connecting to MongoDB with URI: {MONGODB_URI}")
+
+#     # Fetch and sort documents by jobId in ascending order
+#     documents = list(collection.find(query).sort("jobId", 1).limit(limit))
+
+#     # Filter by timestamp
+#     three_months_ago = datetime.now(pytz.UTC) - timedelta(days=90)
+#     valid_documents = []
+
+#     for doc in documents:
+#         timestamp = doc.get("timestamp")
+#         if timestamp:
+#             try:
+#                 doc_timestamp = datetime.fromisoformat(timestamp.replace("Z", "+00:00"))
+#                 if doc_timestamp <= three_months_ago:
+#                     valid_documents.append(doc)
+#             except ValueError:
+#                 logging.warning(f"Invalid timestamp format for document: {doc}")
+
+#     logging.info(f"Filtered {len(valid_documents)} documents to process.")
+#     return valid_documents
+
 def get_recent_documents(client, limit=4):
     """
     Fetches recent documents with jobType 'test2' and sentFollowUp1 as False.
-    Processes documents starting from the lowest jobId.
+    Processes documents starting from the oldest timestamp.
     """
     db = client[DATABASE_NAME]
     collection = db[COLLECTION_NAME]
@@ -59,31 +98,17 @@ def get_recent_documents(client, limit=4):
     query = {
         "sentFollowUp1": False,
         "status": "Sent",
-        "jobPosterName": {"$exists": True, "$ne": None},
-        "jobPosterEmail": {"$exists": True, "$ne": None}
+        "jobPosterName": {"$exists": True, "$ne": None, "$ne": ""},
+        "jobPosterEmail": {"$exists": True, "$ne": None, "$ne": ""}
     }
 
     logging.info(f"Connecting to MongoDB with URI: {MONGODB_URI}")
 
-    # Fetch and sort documents by jobId in ascending order
-    documents = list(collection.find(query).sort("jobId", 1).limit(limit))
+    # Fetch and sort documents by timestamp in ascending order
+    documents = list(collection.find(query).sort("timestamp", 1).limit(limit))
 
-    # Filter by timestamp
-    three_months_ago = datetime.now(pytz.UTC) - timedelta(days=90)
-    valid_documents = []
-
-    for doc in documents:
-        timestamp = doc.get("timestamp")
-        if timestamp:
-            try:
-                doc_timestamp = datetime.fromisoformat(timestamp.replace("Z", "+00:00"))
-                if doc_timestamp <= three_months_ago:
-                    valid_documents.append(doc)
-            except ValueError:
-                logging.warning(f"Invalid timestamp format for document: {doc}")
-
-    logging.info(f"Filtered {len(valid_documents)} documents to process.")
-    return valid_documents
+    logging.info(f"Fetched {len(documents)} documents to process.")
+    return documents
 
 def send_email(sendgrid_client, from_email, to_email, subject, html_content):
     """
@@ -128,6 +153,7 @@ def populate_template(document):
         "ContactNameOrTitle": document.get("jobPosterName", "Hiring Manager"),
         "JobTitle": document.get("jobTitle", "the position"),
         "CompanyName": document.get("companyName", "your company"),
+        "outcome": document.get("outcome", "achieve its goals"),
         "YouTubeVideoURL_Project1": document.get("YouTubeVideoURL_Project1", "https://patient-appointment-booking.ryangriego.com/"),
         "YouTubeThumbnailURL_Project1": document.get("YouTubeThumbnailURL_Project1", "https://res.cloudinary.com/dm7y3yvjp/image/upload/v1736276434/patient-healthcare-booking-app_tbka9n.png"),
         "YouTubeVideoURL_Project2": document.get("YouTubeVideoURL_Project2", "https://chatrrg.ryangriego.com/"),
