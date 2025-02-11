@@ -35,7 +35,9 @@ def get_recent_documents(client, limit=12):
         "sentFollowUp1": False,
         "status": "Sent",
         "jobPosterName": {"$exists": True, "$ne": None, "$ne": ""},
-        "jobPosterEmail": {"$exists": True, "$ne": None, "$ne": ""}
+        "jobPosterEmail": {"$exists": True, "$ne": None, "$ne": ""},
+        # Checks if outcome is None or empty string - helps me see what are the next jobs to get outcomes for
+        "outcome": {"$in": [None, ""]}
     }
 
     # Fetch documents sorted by timestamp in ascending order (next to be sent)
