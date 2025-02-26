@@ -44,7 +44,7 @@ def load_html_template(template_name):
         logging.error(f"Failed to load HTML template: {e}")
         sys.exit(1)
 
-def get_recent_documents(client, limit=3):
+def get_recent_documents(client, limit=5):
     """
     Fetches recent documents with jobType 'test2' and sentFollowUp1 as False.
     Processes documents starting from the lowest jobId.
@@ -61,7 +61,7 @@ def get_recent_documents(client, limit=3):
     }
 
     # Fetch and sort documents by jobId in ascending order
-    documents = list(collection.find(query).sort("jobId", 1).limit(limit))
+    documents = list(collection.find(query).sort("timestamp", 1).limit(limit))
 
     # Filter by timestamp
     three_months_ago = datetime.now(pytz.UTC) - timedelta(days=90)
@@ -154,7 +154,7 @@ def main():
         sys.exit(1)
 
     # Fetch recent documents
-    documents = get_recent_documents(client, limit=3)
+    documents = get_recent_documents(client, limit=5)
     if not documents:
         logging.info("No documents found to send emails.")
         client.close()
