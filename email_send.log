@@ -390,3 +390,6 @@
 2025-02-24 12:50:16,366:INFO:Connected to MongoDB.
 2025-02-24 12:50:16,989:INFO:Fetched 12 documents.
 2025-02-24 12:50:17,027:INFO:MongoDB connection closed.
+2025-03-03 08:57:29,382:INFO:Connected to MongoDB.
+2025-03-03 08:57:30,206:INFO:Fetched 15 documents.
+2025-03-03 08:57:30,244:INFO:MongoDB connection closed.

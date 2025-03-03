@@ -23,9 +23,9 @@ MONGODB_URI = os.getenv("MONGODB_URI")
 DATABASE_NAME = os.getenv("MONGODB_DATABASE")
 COLLECTION_NAME = os.getenv("MONGODB_COLLECTION")
 
-def get_recent_documents(client, limit=12):
+def get_recent_documents(client, limit=15):
     """
-    Fetches the next 12 documents with status 'Sent' and sentFollowUp1 as False.
+    Fetches the next 15 documents with status 'Sent' and sentFollowUp1 as False.
     """
     db = client[DATABASE_NAME]
     collection = db[COLLECTION_NAME]
@@ -55,14 +55,14 @@ def main():
         logging.critical(f"Failed to connect to MongoDB: {e}")
         sys.exit(1)
 
-    # Fetch recent documents (next 12)
-    documents = get_recent_documents(client, limit=12)
+    # Fetch recent documents (next 15)
+    documents = get_recent_documents(client, limit=15)
     if not documents:
         logging.info("No documents found.")
         client.close()
         sys.exit(0)
 
-    # Print the next 12 documents that would be selected
+    # Print the next 15 documents that would be selected
     for doc in documents:
         job_id = doc.get("jobId")
         job_title = doc.get("jobTitle")

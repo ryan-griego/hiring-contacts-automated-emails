@@ -126,7 +126,7 @@ def populate_template(document):
         "YouTubeVideoURL_Project1": document.get("YouTubeVideoURL_Project1", "https://patient-appointment-booking.ryangriego.com/"),
         "YouTubeThumbnailURL_Project1": document.get("YouTubeThumbnailURL_Project1", "https://res.cloudinary.com/dm7y3yvjp/image/upload/v1736276434/patient-healthcare-booking-app_tbka9n.png"),
         "YouTubeVideoURL_Project2": document.get("YouTubeVideoURL_Project2", "https://chatrrg.ryangriego.com/"),
-        "YouTubeThumbnailURL_Project2": document.get("YouTubeThumbnailURL_Project2", "https://res.cloudinary.com/dm7y3yvjp/image/upload/v1736277206/chatrrg-app_fbs5gm.png"),
+        "YouTubeThumbnailURL_Project2": document.get("YouTubeThumbnailURL_Project2", "https://res.cloudinary.com/dm7y3yvjp/image/upload/v1741036737/trizify-thumbnail_cuk7lw.png"),
         "PortfolioURL": PORTFOLIO_URL,
         "LinkedInURL": LINKEDIN_URL,
         "GitHubURL": GITHUB_URL,
